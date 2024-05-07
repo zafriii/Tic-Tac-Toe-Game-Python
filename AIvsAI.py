@@ -8,20 +8,19 @@ class TicTacToe:
         self.board = [["" for _ in range(3)] for _ in range(3)]
         self.root = tk.Tk()
         self.root.title("Tic Tac Toe - AI Vs AI")
-        self.root.configure(bg='white')  # Set background color to white
+        self.root.configure(bg='white') 
         self.buttons = [[None for _ in range(3)] for _ in range(3)]
         for i in range(3):
             for j in range(3):
                 self.buttons[i][j] = tk.Button(self.root, text="", font=('Arial', 30), width=4, height=2,
-                                                command=lambda i=i, j=j: self.on_button_click(i, j), bg='pink')  # Set button background color to pink
+                                                command=lambda i=i, j=j: self.on_button_click(i, j), bg='pink') 
                 self.buttons[i][j].grid(row=i, column=j)
         self.status_label = tk.Label(self.root, text="Player X's turn", font=('Arial', 14), bg='white')
         self.status_label.grid(row=3, columnspan=3)
         self.play_game()  # Start the game
 
     def on_button_click(self, row, col):
-        pass  # This method is not needed since we're automating the game
-
+        pass 
     def play_game(self):
         while not self.check_winner() and not self.check_draw():
             self.make_ai_move()
@@ -30,8 +29,8 @@ class TicTacToe:
                 self.status_label.config(text="AI 1's turn")
             else:
                 self.status_label.config(text="AI 2's turn")
-            self.root.update()  # Update the GUI
-            time.sleep(3)  # Introduce a delay of 3 seconds between moves
+            self.root.update()  
+            time.sleep(3) 
 
     def make_ai_move(self):
         best_score = float("-inf")
