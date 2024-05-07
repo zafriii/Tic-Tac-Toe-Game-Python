@@ -17,7 +17,7 @@ class TicTacToe:
                 self.buttons[i][j].grid(row=i, column=j)
         self.status_label = tk.Label(self.root, text="Player X's turn", font=('Arial', 14), bg='white')
         self.status_label.grid(row=3, columnspan=3)
-        self.play_game()  # Start the game
+        self.play_game() 
 
     def on_button_click(self, row, col):
         pass 
@@ -86,15 +86,15 @@ class TicTacToe:
             return best_score
 
     def check_winner(self):
-        # Check rows
+       
         for row in self.board:
             if row[0] == row[1] == row[2] != "":
                 return True
-        # Check columns
+        
         for col in range(3):
             if self.board[0][col] == self.board[1][col] == self.board[2][col] != "":
                 return True
-        # Check diagonals
+        
         if self.board[0][0] == self.board[1][1] == self.board[2][2] != "":
             return True
         if self.board[0][2] == self.board[1][1] == self.board[2][0] != "":
