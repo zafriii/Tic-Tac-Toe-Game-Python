@@ -8,12 +8,12 @@ class TicTacToe:
         self.board = [["" for _ in range(3)] for _ in range(3)]
         self.root = tk.Tk()
         self.root.title("Tic Tac Toe - Human Vs AI")
-        self.root.configure(bg='white')  # Set background color to white
+        self.root.configure(bg='white') 
         self.buttons = [[None for _ in range(3)] for _ in range(3)]
         for i in range(3):
             for j in range(3):
                 self.buttons[i][j] = tk.Button(self.root, text="", font=('Arial', 30), width=4, height=2,
-                                                command=lambda i=i, j=j: self.on_button_click(i, j), bg='pink')  # Set button background color to pink
+                                                command=lambda i=i, j=j: self.on_button_click(i, j), bg='pink') 
                 self.buttons[i][j].grid(row=i, column=j)
         self.status_label = tk.Label(self.root, text="Player Human's turn", font=('Arial', 14), bg='white')
         self.status_label.grid(row=3, columnspan=3)
